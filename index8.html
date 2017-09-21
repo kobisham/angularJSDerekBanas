@@ -24,12 +24,47 @@
         <label>Currency filter:</label>
         <input type="text" ng-model="money">
         <p>Currency: {{money | currency}}</p>
+
+
+      <ul>
+        <li ng-repeat="student in student.gpas |
+        filter: studentName | orderBy:'gpa'" >
+            {{'Name: ' + student.name +
+            ' : GPA: ' + student.gpa}}
+          </li>
+      </ul>
+
+      <label>Number Filter: </label>
+      <input type="text" ng-model="numVal">
+      <p><b>Default: </b>{{numVal | number}}</p>
+      <p><b>No fraction: </b>{{numVal | number:0}}</p>
+      <p><b>Negative 4 decimal: </b>{{-numVal | number:4}}</p>
+
+      <p><b>Date 1: </b>{{currDate | date: 'medium'}}</p>
+      <p><b>Date 2: </b>{{currDate | date: "dd/MM/yyyy 'at' hh:mm" }}</p>
+
+      <p><b>Default randomStr:</b> {{randomStr}}</p>
+      <p><b>10 chars of randomStr:</b> {{randomStr | limitTo:10}}</p>
+      <p><b>Limit Array items:</b>
+        <ul>
+          <li ng-repeat="item in randArr | limitTo:3">
+            {{item}}
+          </li>
+        </ul>
+      </p>
+
+      <p>
+        <ul>
+          <li ng-repeat="item in weather">
+            {{item.day + " : "}} {{item.rain | raining }}
+          </li>
+        </ul>
+      </p>
       </div>
-
-
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
     <script src="js/exam8.js"></script>
+    
 </body>
 
 </html>
