@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app14" ng-cloak>
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div ng-controller="mainCtrl">
+      <input class="form-control" type="text" ng-model="userName" placeholder="Enter your name">
+      <br>
+      <button type="button" class="btn btn-info" ng-click="greetUser(userName)">Hello</button>
+
+      <br><br>
+      <h3>$location service</h3>
+      <ul class="list-group">
+        <li class="list-group-item">URL: {{currURL}}</li>
+        <li class="list-group-item">Protocol: {{currProtocol}}</li>
+        <li class="list-group-item">Host: {{currHost}}</li>
+        <li class="list-group-item">Port: {{currPort}}</li>
+        <li class="list-group-item">Path: {{currPath}}</li>
+        <li class="list-group-item">Search: {{currSearch}}</li>
+      </ul>
+
+      <br>
+
+      <br><br>
+      <h3>$interval service (every 2 seconds)</h3>
+      <ul class="list-group">
+        <li class="list-group-item">Current time: {{time}}</li>
+      </ul>
+
+      <br><br>
+      <h3>$log service</h3>
+      <label>Message:</label>
+      <input type="text" ng-model="message">
+      <button class="btn" type="button" ng-click="$log.log(message)">Log</button>
+      <button class="btn btn-warning" type="button" ng-click="$log.warn(message)">Warn</button>
+      <button class="btn btn-info" type="button" ng-click="$log.info(message)">Info</button>
+      <button class="btn btn-danger" type="button" ng-click="$log.error(message)">Error</button>
+      <button class="btn" type="button" ng-click="$log.debug(message)">Debug</button>
+
+      <h3>$exceptionHandler Service</h3>
+      <button type="button" class="btn btn-default" ng-click="throwException()">
+        Throw Exception
+      </button>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.6.6/angular-sanitize.min.js"></script>
+  <script src="js/exam14.js"></script>
+
+</body>
+
+</html>
