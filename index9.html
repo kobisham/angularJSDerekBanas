@@ -2,27 +2,57 @@
 <html lang="en" ng-app="app9" ng-cloak>
 
 <head>
-    <title></title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
-    <link href="css/style.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+  <style media="screen">
+    .thick {
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <body>
 
-    <div class="container">
+  <div class="container">
 
-      <div ng-controller="mainCtrl">
-        
-      </div>
+    <div ng-controller="mainCtrl">
+      <ul class="list-group" jql-directive>
+        <li id="barry" class="list-group-item-info">Barry Bonds</li>
+        <ul class="list-group">
+          <li class="list-group-item">AVG: 0.298</li>
+          <li class="list-group-item">HR: 762</li>
+          <li class="list-group-item">OBP: 0.444</li>
+        </ul>
+
+        <li id="hank" class="list-group-item-info">Hank Aaron</li>
+        <ul class="list-group">
+          <li class="list-group-item">AVG: 0.305</li>
+          <li class="list-group-item">HR: 755</li>
+          <li class="list-group-item">OBP: 0.374</li>
+        </ul>
+
+      </ul>
+
+        <h4>Children in list</h4>
+        <span id="childrenList"></span><br><br>
+        <b>Barry's number: </b><span id="barrysNumber"></span><br><br>
+        <b>Is hank Bold: </b><span id="hankBold"></span><br><br>
+        <b>Barry's ID: </b><span id="barryID"></span><br><br>
+        <button type="button" class="btn btn-primary" ng-click="unBold()" >Toggle Bold </button>
+
 
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
-    <script src="js/exam9.js"></script>
+
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+  <script src="js/exam9.js"></script>
 
 </body>
 
