@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app4" ng-cloak>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div ng-controller="eventCtrl">
+            <input type="text" ng-blur="blur = blur + 1"
+                ng-click="click = click + 1"
+                ng-dblclick="dblClick = dblClick + 1"
+                ng-keydown="keydown($event)"
+                >
+            <h4>Blur Events: {{blur}}</h4>
+            <h4>Click Events: {{click}}</h4>
+            <h4>Double-Click Events: {{dblClick}}</h4>
+            <h4>Key down: {{kdkey}}</h4>
+
+            <br><br>
+            
+            <p><button ng-disabled="disableButton">Button</button></p>            <p><button ng-disabled="disableButton">Button</button></p>
+
+            <p>
+                <label for=""><input type="checkbox" ng-model="disableButton" name="" id="">
+                Disable button
+                </label>
+                
+            </p>
+            
+            
+        </div>
+       
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <script src="js/exam4.js"></script>
+    </body>
+</html>

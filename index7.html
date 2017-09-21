@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app7" ng-cloak>
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+
+      <div ng-controller="mainCtrl as parent">
+        <p>Name: {{parent.name}}</p>
+        <p>Sound: {{parent.sound}}</p>
+        <button type="button" name="button" ng-click="parent.animalClick()">Animal Data</button>
+      </div>
+
+      <div ng-controller="dogCtrl as dog">
+        <p>Name: {{dog.child.name}}</p>
+        <p>Sound: {{dog.child.sound}}</p>
+        <p>Bark: {{dog.child.bark}}</p>
+        <button type="button" name="button" ng-click="dog.child.animalClick()">Dog Data</button>
+        &nbsp;
+        <button type="button" name="button" ng-click="dog.child.dogData()">More dog Data</button>
+        <br><br>
+        <input type="text" ng-model="dog.child.bark" name="" value="">
+        <span>New bark: {{dog.child.bark}}</span>
+      </div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <script src="js/exam7.js"></script>
+</body>
+
+</html>

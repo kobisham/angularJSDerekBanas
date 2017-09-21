@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app3" ng-cloak>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+    
+        <div id="groceryList" ng-controller="gListCtrl">
+            <h3 class="ListTitle">{{groceries.length}} Groceries to get</h3>
+            <!-- <h3 class="ListTitle">
+                <span ng-bind="groceries.length"></span>
+                 Groceries to get
+            </h3> -->
+
+            <ol style="margin: 0 0 -15px 0;">
+               <li>{{groceries[0].item}}</li> 
+            </ol>
+
+            <ol start="2">
+                <li ng-repeat="grocery in groceries" ng-if="$index>0">
+                    {{grocery.item}}
+                </li>
+            </ol>
+
+            <label for="">Change 1st item:</label>
+            <input type="text" ng-model="groceries[0].item">
+        
+            <h2>Ng-Include</h2>
+            <h3>Grocery List</h3>
+            <div ng-include="'olGroceryList.html'">
+
+            </div>
+
+            <label>
+            <input type="checkbox" ng-model="showList">
+            Show unordered List
+            </label>
+
+            <h2>Ng-Include</h2>
+            <ng-include src="getList()"></ng-include>
+        
+            <h3>Ng-Switch</h3>
+            <label for="">Enter number (between 1-4):
+                <input type="text" ng-model="someNumber">
+            </label>
+
+            <div ng-switch="someNumber">
+                <p ng-switch-when="1">You entered 1</p>
+                <p ng-switch-when="2">You entered 2</p>
+                <p ng-switch-when="3">You entered 3</p>
+                <p ng-switch-when="4">You entered 4</p>
+                <p ng-switch-default>You are not following orders</p>
+            </div>
+        </div>
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <script src="js/exam3.js"></script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app8" ng-cloak>
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+      <div ng-controller="mainCtrl">
+        <label>Make uppercase:</label>
+        <input type="text" ng-model="name">
+        <p>Uppercase: {{name | uppercase}}</p>
+        <p>Lowercase: {{name | lowercase}}</p>
+
+        <label>Currency filter:</label>
+        <input type="text" ng-model="money">
+        <p>Currency: {{money | currency}}</p>
+      </div>
+
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <script src="js/exam8.js"></script>
+</body>
+
+</html>
